@@ -22,6 +22,7 @@ ansiColor('xterm') { // enable color output for everything in the pipeline
       Checkout()
       Agent()
       Params()
+      Terraform()
   }
 }
 
