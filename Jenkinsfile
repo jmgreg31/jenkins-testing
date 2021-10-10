@@ -26,7 +26,8 @@ ansiColor('xterm') { // enable color output for everything in the pipeline
 }
 
 def Checkout() {
-    checkout scm
+    stage("Checkout"){
+        checkout scm
     }
 }
 
