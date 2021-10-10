@@ -7,7 +7,7 @@ ansiColor('xterm') { // enable color output for everything in the pipeline
     parameters([
        choiceParam(
          name: 'ACTION',
-         choices: ['apply','plan','destroy'].join('\n'),
+         choices: ['plan','apply','destroy'].join('\n'),
          description: 'test1'
        )
     ])
