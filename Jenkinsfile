@@ -26,7 +26,7 @@ ansiColor('xterm') { // enable color output for everything in the pipeline
 
 def Agent() {
     stage("Agent"){
-        print "running on ${$NODE_NAME}"
+        print "running on ${NODE_NAME}"
     }
 }
 
