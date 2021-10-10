@@ -53,12 +53,11 @@ def BuildBot(){
                 returnStatus = sh(
                     returnStatus: true,
                     script: '''
-                        #!/bin/bash
                         export AWS_ACCESS_KEY_ID=$AWS_KEY_ID
                         export AWS_SECRET_ACCESS_KEY=$AWS_KEY_ACCESS
                         export AWS_DEFAULT_REGION=us-east-1
                         terraform init
-                        if [ $ACTION == "plan" ]; then
+                        if [ $ACTION = "plan" ]; then
                             terraform $ACTION
                         else
                             terraform $ACTION -auto-approve
