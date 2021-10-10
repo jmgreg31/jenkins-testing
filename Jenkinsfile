@@ -33,7 +33,7 @@ def Checkout() {
 
 def Agent() {
     stage("Agent"){
-        print "running on ${$NODE_NAME}"
+        print "running on ${NODE_NAME}"
     }
 }
 
