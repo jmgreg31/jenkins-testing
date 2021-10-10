@@ -55,10 +55,10 @@ def Terraform(){
               passwordVariable: 'AWS_KEY_ACCESS']
           ]
           ) {
+                sh('export AWS_ACCESS_KEY_ID=$AWS_KEY_ID')
+                sh('export AWS_SECRET_ACCESS_KEY=$AWS_KEY_ACCESS')
                 returnStatus = sh(
                     returnStatus: true,
-                    sh('export AWS_ACCESS_KEY_ID=$AWS_KEY_ID')
-                    sh('export AWS_SECRET_ACCESS_KEY=$AWS_KEY_ACCESS')
                     script: """
                         export AWS_DEFAULT_REGION=us-east-1
                         terraform init
