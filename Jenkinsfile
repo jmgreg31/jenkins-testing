@@ -43,3 +43,24 @@ def Params() {
         print TEST2
     }
 }
+
+def Terraform(){
+    stage ('Terraform') {
+    returnStatus = sh(
+        returnStatus: true,
+        script: """
+            terraform init
+            terraform plan
+        """
+    )
+    if (returnStatus != 0) {
+          currentBuild.result = 'FAILURE'
+          error_msg = 'Terraform Failed'
+          print(error_msg)
+          error(error_msg)
+      } else {
+          currentBuild.result = 'SUCCESS'
+          print("SUCCESS")
+      }
+    }
+}
