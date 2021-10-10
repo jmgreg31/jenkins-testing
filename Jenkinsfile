@@ -58,8 +58,8 @@ def Terraform(){
                 returnStatus = sh(
                     returnStatus: true,
                     script: """
-                        export AWS_ACCESS_KEY_ID=${AWS_KEY_ID}
-                        export AWS_SECRET_ACCESS_KEY=${AWS_KEY_ACCESS}
+                        export AWS_ACCESS_KEY_ID=$AWS_KEY_ID
+                        export AWS_SECRET_ACCESS_KEY=$AWS_KEY_ACCESS
                         export AWS_DEFAULT_REGION=us-east-1
                         terraform init
                         terraform plan
