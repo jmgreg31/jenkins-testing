@@ -19,9 +19,15 @@ ansiColor('xterm') { // enable color output for everything in the pipeline
   ])
 
   node(agent){
+      Checkout()
       Agent()
       Params()
   }
+}
+
+def Checkout() {
+    checkout scm
+    }
 }
 
 def Agent() {
