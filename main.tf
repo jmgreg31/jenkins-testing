@@ -205,11 +205,6 @@ terraform {
   }
 }
 
-provider "aws" {
-  version = ">= 3.0.0"
-  region  = var.region
-}
-
 module demo_cf {
   source                         = "git::https://github.com/jmgreg31/terraform-aws-cloudfront.git?ref=v4.3.5"
   create_cf                      = var.create_cf
