@@ -8,7 +8,7 @@ ansiColor('xterm') { // enable color output for everything in the pipeline
        choiceParam(
          name: 'ACTION',
          choices: ['plan','apply','destroy'].join('\n'),
-         description: 'test1'
+         description: 'Terraform action to perform'
        )
     ])
   ])
@@ -32,9 +32,9 @@ def Zip() {
             returnStatus: true,
             script: '''
                 zip -r lambdaFunction.zip .
-                zip -d lambdaFunction.zip '.terraform/*' || True
-                zip -d lambdaFunction.zip 'terraform*' || True
-                zip -d lambdaFunction.zip '.git/*' || True
+                zip -d lambdaFunction.zip '.terraform/*' || true
+                zip -d lambdaFunction.zip 'terraform*' || true
+                zip -d lambdaFunction.zip '.git/*' || true
             '''
         )
     }
